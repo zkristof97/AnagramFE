@@ -3,6 +3,7 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {DisplayResultsComponent} from "./display-results/display-results.component";
 import {HttpClientModule} from "@angular/common/http";
 import {environment} from "../environments/environment";
 import {AnagramService} from "./services/anagram.service";
@@ -10,7 +11,8 @@ import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    DisplayResultsComponent
   ],
   imports: [
     BrowserModule,

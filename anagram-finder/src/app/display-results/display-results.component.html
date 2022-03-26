@@ -1,0 +1,11 @@
+<h3>Találatok</h3>
+<div class="row">
+  <div class="col-sm-12">
+    <ul class="list-group">
+      <li *ngFor="let anagram of (anagramService.anagramSubject | async)"
+          class="list-group-item">
+        {{ anagram }}
+      </li>
+    </ul>
+  </div>
+</div>
