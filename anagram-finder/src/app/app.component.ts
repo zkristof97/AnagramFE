@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {FormBuilder} from "@angular/forms";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'anagram-finder';
+
+  searchForm = this.formBuilder.group({
+    word: ''
+  });
+
+  constructor(private formBuilder: FormBuilder) { }
+
+  onSubmit(): void {
+    // TODO: add submit logic
+    this.searchForm.reset();
+  }
 }
