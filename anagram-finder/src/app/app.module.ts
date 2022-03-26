@@ -3,6 +3,10 @@ import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
 import {ReactiveFormsModule} from "@angular/forms";
+import {HttpClientModule} from "@angular/common/http";
+import {environment} from "../environments/environment";
+import {AnagramService} from "./services/anagram.service";
+import {CommonModule} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -10,9 +14,14 @@ import {ReactiveFormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
-    ReactiveFormsModule
+    CommonModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [
+    {provide: 'BASE_URL', useValue: environment.anagramApiBaseUrl},
+    AnagramService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule {

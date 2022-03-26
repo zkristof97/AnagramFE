@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {FormBuilder} from "@angular/forms";
+import {AnagramService} from "./services/anagram.service";
 
 @Component({
   selector: 'app-root',
@@ -13,10 +14,11 @@ export class AppComponent {
     word: ''
   });
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder,
+              private anagramService: AnagramService) { }
 
   onSubmit(): void {
-    // TODO: add submit logic
+    this.anagramService.getAllByWord(this.searchForm.get('word')?.value);
     this.searchForm.reset();
   }
 }
