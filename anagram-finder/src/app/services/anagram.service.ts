@@ -10,15 +10,15 @@ export class AnagramService {
   anagramSubject: Subject<string[]> = new Subject<string[]>();
 
   constructor(private http: HttpClient,
-              @Inject('BASE_URL') private baseUrl: string) { }
+              @Inject('BASE_URL') private baseUrl: string) {
+  }
 
   getAllByWord(word: string): void {
-    this.http.post<string[]>(`${this.baseUrl}anagram`, {
-      params: {
-        word: word
-      }
-    }).subscribe(anagrams => {
-      this.anagramSubject.next(anagrams)
-    });
+    this.http.post<string[]>(`${this.baseUrl}anagram`, {word: word})
+      .subscribe({
+        next: anagrams => {
+          this.anagramSubject.next(anagrams)
+        }
+      });
   }
 }
