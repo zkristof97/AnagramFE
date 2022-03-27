@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  anagramApiBaseUrl: 'https://localhost:44300/'
+  anagramApiBaseUrl: 'http://localhost:3000/'
 };
 
 /*
